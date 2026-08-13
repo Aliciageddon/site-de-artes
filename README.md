@@ -1,1 +1,316 @@
-# site-de-artes
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chipping Claghorn Gazette | Portal de Notícias de Arte</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+.mancha {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1; 
+    opacity: 0.18; 
+    pointer-events: none; 
+}
+/* Primeira gota/mancha (Canto superior esquerdo) */
+.mancha-1 {
+    top: 30px;
+    left: -50px;
+    width: 350px;
+    height: 350px;
+    background-image: url('https://i.pinimg.com/1200x/20/39/6d/20396d983596654e3da62198ad66d6f1.jpg'); 
+    transform: rotate(15deg);
+}
+/* Segunda gota/mancha (Lado direito, mais abaixo) */
+.mancha-2 {
+    top: 400px;
+    right: -70px;
+    width: 400px;
+    height: 400px;
+    background-image: url('https://i.pinimg.com/736x/32/70/a0/3270a08581457261e768900c54e5bbaf.jpg');
+    transform: rotate(-30deg);
+}
+/* Terceira gota/mancha (No fundo, perto do rodapé) */
+.mancha-3 {
+    bottom: 100px;
+    left: -40px;
+    width: 380px;
+    height: 380px;
+    background-image: url('https://i.pinimg.com/1200x/20/39/6d/20396d983596654e3da62198ad66d6f1.jpg'); 
+    transform: rotate(180deg);
+}
+/* Configurações Globais e Cores */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #F7F5F0; /* Tom off-white de papel/tela limpa */
+    color: #2C2C2C;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
+}
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+/* --- CABEÇALHO --- */
+.site-header {
+    text-align: center;
+    padding: 50px 0 30px 0;
+    border-bottom: 2px solid #E5E0D8;
+    margin-bottom: 40px;
+    background-color: rgba(247, 245, 240, 0.9);
+}
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #1A1A1A;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+.slogan {
+    font-size: 1.1rem;
+    color: #666666;
+    margin-bottom: 25px;
+}
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+.main-nav a {
+    text-decoration: none;
+    color: #333333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.main-nav a:hover {
+    color: #132f8b; 
+}
+/* --- MATÉRIA DE CAPA (HERO) --- */
+.hero-article {
+    background: #FFFFFF; 
+    border: 1px solid #E5E0D8;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 30px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.03);
+}
+.hero-image-placeholder {
+    background-color: #EFECE6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-style: italic;
+    min-height: 300px;
+}
+.hero-text {
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.category-tag {
+    display: inline-block;
+    background-color: #e4a7c1;
+    color: #444;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    width: fit-content;
+}
+.hero-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #1A1A1A;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+.article-excerpt {
+    color: #555555;
+    margin-bottom: 25px;
+}
+.read-more {
+    text-decoration: none;
+    color: #aac7f1;
+    font-weight: 700;
+    transition: color 0.2s;
+}
+.read-more:hover {
+    color: #132f8b;
+}
+/* --- GRADE DE NOTÍCIAS --- */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+.news-card {
+    background: #FFFFFF;
+    border: 1px solid #E5E0D8;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+.news-card:hover {
+    transform: translateY(-5px);
+}
+.card-img-placeholder {
+    background-color: #EFECE6;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+.card-body {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.news-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: #1A1A1A;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+.news-card p {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+/* Adicione isso no style.css para controlar todas as imagens */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+/* Para as imagens dentro dos placeholders */
+.card-img-placeholder img,
+.hero-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Corta a imagem para preencher sem distorcer */
+}
+.hero-image-placeholder img {
+    object-fit: contain; /* Mantém a imagem inteira no hero */
+}
+/* --- RODAPÉ --- */
+.site-footer {
+    background-color: #EFECE6;
+    border-top: 2px solid #E5E0D8;
+    text-align: center;
+    padding: 30px 0;
+    color: #555;
+    font-size: 0.9rem;
+}
+.footer-content p {
+    margin-bottom: 5px;
+}
+/* Mostrar em celular */
+@media (max-width: 768px) {
+    .hero-article {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-content">
+            <h1 class="logo">Chipping Claghorn Gazette</h1>
+            <p class="slogan">A Arte é apenas um reflexo dos sentimentos de quem a contempla.</p>
+            <nav class="main-nav">
+                <a href="index.html">Início</a>
+                <a href="artistas.html">Artistas</a>
+                <a href="informacoes.html">Informações</a>
+                <a href="curiosidades.html">Curiosidades</a>
+                <a href="sobre.html">Sobre o Grupo</a>
+            </nav>
+        </div>
+        <div class="mancha mancha-1"></div>
+    <div class="mancha mancha-2"></div>
+    <div class="mancha mancha-3"></div>
+
+</header>
+   <main class="container main-content">
+
+<section id="inicio" class="hero-article">
+            <div class="hero-image-placeholder">
+                <span> <img src= 'https://juliafontes.net/wp-content/uploads/2024/03/whatsapp-image-2024-02-29-at-23.48.21.jpeg' alt= 'pintura produzida por Julia Fontes'> </span>
+            </div>
+            <div class="hero-text">
+                <span class="category-tag">Matéria de Capa</span>
+                <h2>A Arte Como Forma De Expressão</h2>
+                <p class="article-excerpt">Descubra como a Arte foi e pode ser usada.</p>
+               <a href="index.html" class="read-more">Ler matéria completa &rarr;</a>
+            </div>
+        </section>
+
+<section class="news-grid">
+            
+<article class="news-card">
+                <div class="card-img-placeholder"><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlU_XqRdcMlLiPUtvLy8cF0bx7T5EQvDGilWNZ89w3Gw&s=10' alt= 'Pintura de Anita Malfatti'> </div>
+                <div class="card-body">
+                    <span class="category-tag">Artistas</span>
+                    <h3>Artistas de Maior Reconhecimento do século XX e XXI</h3>
+                    <p>Como Brunelleschi e Giotto mudaram para sempre a forma como o espaço é representado nas telas.</p>
+                    <a href="artistas.html" class="read-more">Ler mais</a>
+                </div>
+            </article>
+
+<article class="news-card">
+                <div class="card-img-placeholder"><img src='https://cdn0.umcomo.com.br/pt/posts/1/6/1/quais_foram_as_descobertas_de_isaac_newton_11161_paso_2_600.jpg' alt= 'Desenho demonstrando uma experiencias realizada por isaac Newton'></div>
+                <div class="card-body">
+                    <span class="category-tag">Informações</span>
+                    <h3>As Cores e Emoções em Cada Perpectiva</h3>
+                    <p>Uma análise profunda de como as cores são representadas em diferentes sociedades e etnias.</p>
+                    <a href="informacoes.html" class="read-more">Ler mais</a>
+                </div>
+            </article>
+
+<article class="news-card">
+                <div class="card-img-placeholder">[ Imagem ]</div>
+                <div class="card-body">
+                    <span class="category-tag">Curiosidades</span>
+                    <h3>O Surrealismo de Salvador Dalí Explicado</h3>
+                    <p>Entenda o simbolismo por trás dos relógios derretidos e dos sonhos na obra 'A Persistência da Memória'.</p>
+                    <a href="curiosidades.html" class="read-more">Ler mais</a>
+                </div>
+            </article>
+
+</section>
+
+</main>
+    <footer id="sobre" class="site-footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 Chiping Claghorn Gazette. Trabalho escolar de Programação.</p>
+            <p>Desenvolvido pelo Grupo: Alicia, Emely, Camila e Gabriel</p>
+        </div>
+    </footer>
+</body>
+</html>

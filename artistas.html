@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artistas | Chipping Claghorn Gazette</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+<style>
+    /* --- EFEITO DE GOTAS E MANCHAS DE TINTA REAIS --- */
+.mancha {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1; 
+    opacity: 0.18;
+    pointer-events: none; 
+}
+/* Primeira gota/mancha (Canto superior esquerdo) */
+.mancha-1 {
+    top: 30px;
+    left: -50px;
+    width: 350px;
+    height: 350px;
+    background-image: url('https://i.pinimg.com/1200x/20/39/6d/20396d983596654e3da62198ad66d6f1.jpg'); 
+    transform: rotate(15deg);
+}
+/* Segunda gota/mancha (Lado direito, mais abaixo) */
+.mancha-2 {
+    top: 400px;
+    right: -70px;
+    width: 400px;
+    height: 400px;
+    background-image: url('https://i.pinimg.com/736x/32/70/a0/3270a08581457261e768900c54e5bbaf.jpg');
+    transform: rotate(-30deg);
+}
+/* Terceira gota/mancha (No fundo, perto do rodapé) */
+.mancha-3 {
+    bottom: 100px;
+    left: -40px;
+    width: 380px;
+    height: 380px;
+    background-image: url('https://i.pinimg.com/1200x/20/39/6d/20396d983596654e3da62198ad66d6f1.jpg'); 
+    transform: rotate(180deg);
+}
+.site-header {
+    text-align: center;
+    padding: 50px 0 30px 0;
+    border-bottom: 2px solid #E5E0D8;
+    margin-bottom: 40px;
+    background-color: rgba(247, 245, 240, 0.9);
+}
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #1A1A1A;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+.slogan {
+    font-size: 1.1rem;
+    color: #666666;
+    margin-bottom: 25px;
+}
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+.main-nav a {
+    text-decoration: none;
+    color: #333333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.main-nav a:hover {
+    color: #132f8b; 
+}
+.grade-artistas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.artista-card {
+    background: #F7F5F0;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.artista-card:hover {
+    transform: translateY(-5px);
+}
+
+.artista-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 15px;
+    border: 3px solid #E5E0D8;
+}
+
+.artista-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.artista-periodo {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 10px;
+}
+/* --- RODAPÉ --- */
+.site-footer {
+    background-color: #EFECE6;
+    border-top: 2px solid #E5E0D8;
+    text-align: center;
+    padding: 30px 0;
+    color: #555;
+    font-size: 0.9rem;
+}
+.footer-content p {
+    margin-bottom: 5px;
+}
+/* Mostrar em celular */
+@media (max-width: 768px) {
+    .hero-article {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+<body>
+   
+    
+    <header class="site-header">
+        <div class="container header-content">
+            <h1 class="logo">Chipping Claghorn Gazette</h1>
+            <p class="slogan">A Arte é apenas um reflexo dos sentimentos de quem a contempla.</p>
+            <nav class="main-nav">
+                <a href="index.html">Início</a>
+                <a href="artistas.html">Artistas</a>
+                <a href="informacoes.html">Informações</a>
+                <a href="curiosidades.html">Curiosidades</a>
+                <a href="sobre.html">Sobre o Grupo</a>
+            </nav>
+        </div>
+        <div class="mancha mancha-1"></div>
+    <div class="mancha mancha-2"></div>
+    <div class="mancha mancha-3"></div>
+
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="container main-content">
+        <section class="pagina-interna">
+            <h1 class="titulo-pagina">Artistas Famosos</h1>
+            <p class="subtitulo-pagina">Conheça os mestres que transformaram a arte ao longo dos séculos</p>
+
+            <!-- GRADE DE ARTISTAS -->
+            <div class="grade-artistas">
+                <div class="artista-card">
+                    <div class="artista-img">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Leonardo_self.jpg/800px-Leonardo_self.jpg" alt="Leonardo da Vinci">
+                    </div>
+                    <h3>Leonardo da Vinci</h3>
+                    <p class="artista-periodo">1452 - 1519 | Renascimento</p>
+                    <p>Mestre do sfumato, pintor da Mona Lisa e inventor à frente de seu tempo.</p>
+                    <a href="#" class="read-more">Conhecer obra →</a>
+                </div>
+
+                <div class="artista-card">
+                    <div class="artista-img">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project_%28454045%29.jpg/800px-Vincent_van_Gogh_-_Self-Portrait_-_Google_Art_Project_%28454045%29.jpg" alt="Van Gogh">
+                    </div>
+                    <h3>Vincent van Gogh</h3>
+                    <p class="artista-periodo">1853 - 1890 | Pós-Impressionismo</p>
+                    <p>Pinceladas expressivas e cores vibrantes que emocionam até hoje.</p>
+                    <a href="#" class="read-more">Conhecer obra →</a>
+                </div>
+
+                <div class="artista-card">
+                    <div class="artista-img">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Frida_Kahlo%2C_by_Guillermo_Kahlo.jpg/800px-Frida_Kahlo%2C_by_Guillermo_Kahlo.jpg" alt="Frida Kahlo">
+                    </div>
+                    <h3>Frida Kahlo</h3>
+                    <p class="artista-periodo">1907 - 1954 | Surrealismo</p>
+                    <p>Auto-retratos que exploram a dor, a identidade e a cultura mexicana.</p>
+                    <a href="#" class="read-more">Conhecer obra →</a>
+                </div>
+
+                <div class="artista-card">
+                    <div class="artista-img">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Tarsila_do_Amaral_%28c._1920%29.jpg/800px-Tarsila_do_Amaral_%28c._1920%29.jpg" alt="Tarsila do Amaral">
+                    </div>
+                    <h3>Tarsila do Amaral</h3>
+                    <p class="artista-periodo">1886 - 1973 | Modernismo</p>
+                    <p>Pintora do Abaporu, símbolo da Semana de Arte Moderna de 1922.</p>
+                    <a href="#" class="read-more">Conhecer obra →</a>
+                </div>
+
+                <div class="artista-card">
+                    <div class="artista-img">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Salvador_Dali_1939.jpg/800px-Salvador_Dali_1939.jpg" alt="Salvador Dalí">
+                    </div>
+                    <h3>Salvador Dalí</h3>
+                    <p class="artista-periodo">1904 - 1989 | Surrealismo</p>
+                    <p>Gênio excêntrico dos relógios derretidos e dos sonhos surreais.</p>
+                    <a href="#" class="read-more">Conhecer obra →</a>
+                </div>
+
+                <div class="artista-card">
+                    <div class="artista-img">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Anita_Malfatti_%281914%29.jpg/800px-Anita_Malfatti_%28cropped%29.jpg" alt="Anita Malfatti">
+                    </div>
+                    <h3>Anita Malfatti</h3>
+                    <p class="artista-periodo">1889 - 1964 | Modernismo</p>
+                    <p>Pioneira do expressionismo no Brasil, influenciou a Semana de 22.</p>
+                    <a href="#" class="read-more">Conhecer obra →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 Chiping Claghorn Gazette. Trabalho escolar de Programação.</p>
+            <p>Desenvolvido pelo Grupo: Alicia, Emely, Camila e Gabriel</p>
+        </div>
+    </footer>
+</body>
+</html>

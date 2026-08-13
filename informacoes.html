@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informações | Chipping Claghorn Gazette</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+    /* --- EFEITO DE GOTAS E MANCHAS DE TINTA REAIS --- */
+.mancha {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1; 
+    opacity: 0.18; 
+    pointer-events: none; 
+}
+/* Primeira gota/mancha (Canto superior esquerdo) */
+.mancha-1 {
+    top: 30px;
+    left: -50px;
+    width: 350px;
+    height: 350px;
+    background-image: url('https://i.pinimg.com/1200x/20/39/6d/20396d983596654e3da62198ad66d6f1.jpg'); 
+    transform: rotate(15deg);
+}
+/* Segunda gota/mancha (Lado direito, mais abaixo) */
+.mancha-2 {
+    top: 400px;
+    right: -70px;
+    width: 400px;
+    height: 400px;
+    background-image: url('https://i.pinimg.com/736x/32/70/a0/3270a08581457261e768900c54e5bbaf.jpg');
+    transform: rotate(-30deg);
+}
+/* Terceira gota/mancha (No fundo, perto do rodapé) */
+.mancha-3 {
+    bottom: 100px;
+    left: -40px;
+    width: 380px;
+    height: 380px;
+    background-image: url('https://i.pinimg.com/1200x/20/39/6d/20396d983596654e3da62198ad66d6f1.jpg'); 
+    transform: rotate(180deg);
+}
+.site-header {
+    text-align: center;
+    padding: 50px 0 30px 0;
+    border-bottom: 2px solid #E5E0D8;
+    margin-bottom: 40px;
+    background-color: rgba(247, 245, 240, 0.9);
+}
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #1A1A1A;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+.slogan {
+    font-size: 1.1rem;
+    color: #666666;
+    margin-bottom: 25px;
+}
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+.main-nav a {
+    text-decoration: none;
+    color: #333333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.main-nav a:hover {
+    color: #132f8b; 
+}
+.tabela-cores {
+    margin-bottom: 40px;
+}
+
+.cor-bolinha {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+.cor-bolinha.vermelho { background: #E74C3C; }
+.cor-bolinha.branco { background: #FFFFFF; }
+.cor-bolinha.preto { background: #2C2C2C; }
+.cor-bolinha.amarelo { background: #F1C40F; }
+.cor-bolinha.verde { background: #2ECC71; }
+
+.conteudo-duas-colunas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.circulo-cromatico-placeholder {
+    background: #EFECE6;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    color: #888;
+}
+
+.lista-tecnicas {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-tecnicas li {
+    background: #F7F5F0;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border-left: 4px solid #132f8b;
+}
+/* --- RODAPÉ --- */
+.site-footer {
+    background-color: #EFECE6;
+    border-top: 2px solid #E5E0D8;
+    text-align: center;
+    padding: 30px 0;
+    color: #555;
+    font-size: 0.9rem;
+}
+.footer-content p {
+    margin-bottom: 5px;
+}
+/* Mostrar em celular */
+@media (max-width: 768px) {
+    .hero-article {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+<body>
+   <header class="site-header">
+        <div class="container header-content">
+            <h1 class="logo">Chipping Claghorn Gazette</h1>
+            <p class="slogan">A Arte é apenas um reflexo dos sentimentos de quem a contempla.</p>
+            <nav class="main-nav">
+                <a href="index.html">Início</a>
+                <a href="artistas.html">Artistas</a>
+                <a href="informacoes.html">Informações</a>
+                <a href="curiosidades.html">Curiosidades</a>
+                <a href="sobre.html">Sobre o Grupo</a>
+            </nav>
+        </div>
+        <div class="mancha mancha-1"></div>
+    <div class="mancha mancha-2"></div>
+    <div class="mancha mancha-3"></div>
+
+</header>
+
+    <main class="container main-content">
+        <section class="pagina-interna">
+            <h1 class="titulo-pagina">A Ciência das Cores</h1>
+            <p class="subtitulo-pagina">Como diferentes culturas percebem e utilizam as cores na arte</p>
+
+            <!-- TABELA COMPARATIVA -->
+            <section class="tabela-cores">
+                <h2>Significado das Cores em Diferentes Culturas</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Cor</th>
+                            <th>Ocidente</th>
+                            <th>Oriente (Japão/China)</th>
+                            <th>África</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="cor-bolinha vermelho"></span> Vermelho</td>
+                            <td>Paixão, perigo, amor</td>
+                            <td>Sorte, felicidade (China)</td>
+                            <td>Vida, força, saúde</td>
+                        </tr>
+                        <tr>
+                            <td><span class="cor-bolinha branco"></span> Branco</td>
+                            <td>Paz, pureza, casamento</td>
+                            <td>Luto, morte (Japão)</td>
+                            <td>Espiritualidade</td>
+                        </tr>
+                        <tr>
+                            <td><span class="cor-bolinha preto"></span> Preto</td>
+                            <td>Luto, elegância</td>
+                            <td>Sabedoria, experiência</td>
+                            <td>Maturidade, ancestralidade</td>
+                        </tr>
+                        <tr>
+                            <td><span class="cor-bolinha amarelo"></span> Amarelo</td>
+                            <td>Alegria, energia</td>
+                            <td>Realeza (China antiga)</td>
+                            <td>Riqueza, prosperidade</td>
+                        </tr>
+                        <tr>
+                            <td><span class="cor-bolinha verde"></span> Verde</td>
+                            <td>Natureza, esperança</td>
+                            <td>Eternidade, juventude</td>
+                            <td>Fertilidade, cura</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- ARTIGO SOBRE TEORIA DAS CORES -->
+            <article class="artigo-cores">
+                <h2>A Percepção das Cores na Arte</h2>
+                <div class="conteudo-duas-colunas">
+                    <div>
+                        <p>As cores não são apenas elementos visuais; elas carregam significados profundos que variam entre culturas. Enquanto no Ocidente o branco simboliza pureza, no Japão ele está associado ao luto.</p>
+                        <p>Artistas como <strong>Van Gogh</strong> usaram as cores para expressar emoções — o amarelo representava alegria e o azul, melancolia.</p>
+                    </div>
+                    <div>
+                        <h3>Círculo Cromático</h3>
+                        <div class="circulo-cromatico-placeholder">
+                            [ Imagem do círculo cromático ]
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- TÉCNICAS ARTÍSTICAS -->
+            <section class="tecnicas">
+                <h2>Técnicas Artísticas Famosas</h2>
+                <ul class="lista-tecnicas">
+                    <li>
+                        <strong>Sfumato</strong> - Técnica de Leonardo da Vinci que cria transições suaves entre cores e sombras.
+                    </li>
+                    <li>
+                        <strong>Claroscuro</strong> - Uso dramático de luz e sombra para dar volume, usado por Caravaggio.
+                    </li>
+                    <li>
+                        <strong>Pontilhismo</strong> - Técnica de Seurat que usa pequenos pontos de cor pura.
+                    </li>
+                    <li>
+                        <strong>Perspectiva</strong> - Criação de profundidade em superfícies planas, revolucionada no Renascimento.
+                    </li>
+                </ul>
+            </section>
+        </section>
+    </main>
+
+  <footer id="sobre" class="site-footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 Chiping Claghorn Gazette. Trabalho escolar de Programação.</p>
+            <p>Desenvolvido pelo Grupo: Alicia, Emely, Camila e Gabriel</p>
+        </div>
+    </footer>
+</body>
+</html>

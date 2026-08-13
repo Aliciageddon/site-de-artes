@@ -1,0 +1,318 @@
+
+<style>
+    /* --- EFEITO DE GOTAS E MANCHAS DE TINTA REAIS --- */
+.mancha {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1; 
+    opacity: 0.18; 
+    pointer-events: none; 
+}
+/* Primeira gota/mancha (Canto superior esquerdo) */
+.mancha-1 {
+    top: 30px;
+    left: -50px;
+    width: 350px;
+    height: 350px;
+    background-image: url('https://i.pinimg.com/1200x/20/39/6d/20396d983596654e3da62198ad66d6f1.jpg'); 
+    transform: rotate(15deg);
+}
+/* Segunda gota/mancha (Lado direito, mais abaixo) */
+.mancha-2 {
+    top: 400px;
+    right: -70px;
+    width: 400px;
+    height: 400px;
+    background-image: url('https://i.pinimg.com/736x/32/70/a0/3270a08581457261e768900c54e5bbaf.jpg');
+    transform: rotate(-30deg);
+}
+/* Terceira gota/mancha (No fundo, perto do rodapé) */
+.mancha-3 {
+    bottom: 100px;
+    left: -40px;
+    width: 380px;
+    height: 380px;
+    background-image: url('https://i.pinimg.com/1200x/20/39/6d/20396d983596654e3da62198ad66d6f1.jpg'); 
+    transform: rotate(180deg);
+}
+.site-header {
+    text-align: center;
+    padding: 50px 0 30px 0;
+    border-bottom: 2px solid #E5E0D8;
+    margin-bottom: 40px;
+    background-color: rgba(247, 245, 240, 0.9);
+}
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #1A1A1A;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+.slogan {
+    font-size: 1.1rem;
+    color: #666666;
+    margin-bottom: 25px;
+}
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+.main-nav a {
+    text-decoration: none;
+    color: #333333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.main-nav a:hover {
+    color: #132f8b; 
+}
+.lista-curiosidades {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-curiosidades li {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    border-bottom: 1px solid #E5E0D8;
+    align-items: flex-start;
+}
+
+.lista-curiosidades li:last-child {
+    border-bottom: none;
+}
+
+.numero {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #132f8b;
+    min-width: 50px;
+    line-height: 1;
+}
+
+.lista-curiosidades h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.curiosidades-rapidas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.fato-card {
+    background: #F7F5F0;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.fato-card span {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 10px;
+}
+.equipe-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.membro {
+    text-align: center;
+    padding: 20px;
+    background: #F7F5F0;
+    border-radius: 12px;
+}
+
+.avatar {
+    font-size: 3rem;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #EFECE6;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.membro h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+}
+
+.membro p {
+    font-size: 0.9rem;
+    color: #666;
+}
+.formulario-contato {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px solid #E5E0D8;
+}
+
+.formulario-contato form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin-top: 15px;
+}
+
+.formulario-contato label {
+    font-weight: 600;
+}
+
+.formulario-contato input,
+.formulario-contato select,
+.formulario-contato textarea {
+    padding: 12px;
+    border: 1px solid #E5E0D8;
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    background: #FAFAFA;
+}
+
+.formulario-contato input:focus,
+.formulario-contato textarea:focus {
+    border-color: #132f8b;
+    outline: none;
+}
+
+.formulario-contato button {
+    background: #132f8b;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.formulario-contato button:hover {
+    background: #1a3f9e;
+}
+
+/* --- RODAPÉ --- */
+.site-footer {
+    background-color: #EFECE6;
+    border-top: 2px solid #E5E0D8;
+    text-align: center;
+    padding: 30px 0;
+    color: #555;
+    font-size: 0.9rem;
+}
+.footer-content p {
+    margin-bottom: 5px;
+}
+/* Mostrar em celular */
+@media (max-width: 768px) {
+    .hero-article {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-content">
+            <h1 class="logo">Chipping Claghorn Gazette</h1>
+            <p class="slogan">A Arte é apenas um reflexo dos sentimentos de quem a contempla.</p>
+            <nav class="main-nav">
+                <a href="index.html">Início</a>
+                <a href="artistas.html">Artistas</a>
+                <a href="informacoes.html">Informações</a>
+                <a href="curiosidades.html">Curiosidades</a>
+                <a href="sobre.html">Sobre o Grupo</a>
+            </nav>
+        </div>
+        <div class="mancha mancha-1"></div>
+    <div class="mancha mancha-2"></div>
+    <div class="mancha mancha-3"></div>
+
+</header>
+
+    <main class="container main-content">
+        <section class="pagina-interna">
+            <h1 class="titulo-pagina">Curiosidades do Mundo da Arte</h1>
+            <p class="subtitulo-pagina">Fatos surpreendentes que você provavelmente não sabia</p>
+
+            <!-- LISTA DE CURIOSIDADES COM NÚMEROS -->
+            <ul class="lista-curiosidades">
+                <li>
+                    <span class="numero">1</span>
+                    <div>
+                        <h3>Van Gogh só vendeu um quadro em vida</h3>
+                        <p>"O Vinhedo Vermelho" foi a única obra vendida enquanto ele vivia. Hoje, seus quadros valem mais de US$ 100 milhões.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="numero">2</span>
+                    <div>
+                        <h3>A Mona Lisa tem sobrancelhas... ou não?</h3>
+                        <p>Estudos com tecnologia de ponta mostraram que Leonardo originalmente pintou sobrancelhas, mas elas se perderam com o tempo devido a restaurações e ao manuseio.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="numero">3</span>
+                    <div>
+                        <h3>"O Grito" não é um grito</h3>
+                        <p>Edvard Munch explicou que a obra retrata o grito da natureza, não da pessoa. Ele sentiu a angústia do mundo ao seu redor em um passeio.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="numero">4</span>
+                    <div>
+                        <h3>A arte mais cara já vendida</h3>
+                        <p>"Salvator Mundi" de Leonardo da Vinci foi vendida por US$ 450,3 milhões em 2017, tornando-se a obra de arte mais cara da história.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="numero">5</span>
+                    <div>
+                        <h3>Picasso era um "artista de rua"</h3>
+                        <p>Antes de ficar famoso, Picasso queimava seus próprios desenhos para se aquecer no inverno parisiense.</p>
+                    </div>
+                </li>
+            </ul>
+
+            <!-- CURIOSIDADES EM CARDS -->
+            <h2 style="margin-top: 40px;">Bônus: Fatos Rápidos</h2>
+            <div class="curiosidades-rapidas">
+                <div class="fato-card">
+                    <span>🎨</span>
+                    <p>A tinta azul ultramarino era feita de lápis-lazúli, mais cara que o ouro.</p>
+                </div>
+                <div class="fato-card">
+                    <span>🖌️</span>
+                    <p>Michelangelo pintou a Capela Sistina deitado de costas por 4 anos.</p>
+                </div>
+                <div class="fato-card">
+                    <span>🖼️</span>
+                    <p>O quadro "Mulher com chapéu" de Matisse foi chamado de "aberração" na época.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="sobre" class="site-footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 Chiping Claghorn Gazette. Trabalho escolar de Programação.</p>
+            <p>Desenvolvido pelo Grupo: Alicia, Emely, Camila e Gabriel</p>
+        </div>
+    </footer>
+</body>
+</html>
